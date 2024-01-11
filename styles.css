@@ -1,0 +1,83 @@
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f5f5f5;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.navbar-nav .nav-link,
+.navbar-brand {
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-brand:hover {
+  color: #17a2b8;
+}
+
+.card-header {
+  background-color: #17a2b8;
+  color: #fff;
+  border-bottom: 2px solid #343a40;
+  border-radius: 8px 8px 0 0;
+}
+
+.card-title {
+  font-size: 2rem;
+  color: #343a40;
+}
+
+.table {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table th,
+.table td {
+  padding: 12px;
+}
+
+.table th {
+  background-color: #17a2b8;
+  color: #fff;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #f8f9fa;
+}
+
+.table tbody tr:hover {
+  background-color: #e0f7fa;
+}
+
+@media (max-width: 767px) {
+  .navbar-nav {
+    margin-top: 10px;
+  }
+
+  .navbar-toggler-icon {
+    background-color: #fff;
+  }
+
+  .table {
+    overflow-x: auto;
+  }
+}

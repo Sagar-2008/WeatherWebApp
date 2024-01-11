@@ -57,115 +57,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
   getWeather("Delhi");
 
-  const populateShanghai = () => {
+  const populateCity = (city) => {
     fetch(
-      "https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=shanghai",
+      `https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=${city}`,
       options
     )
       .then((response) => response.json())
       .then((response) => {
         console.log(response);
-        document.getElementById("shanghai_pct").innerHTML = response.cloud_pct;
-        document.getElementById("shanghai_feels_like").innerHTML =
-          response.feels_like;
-        document.getElementById("shanghai_humidity").innerHTML =
-          response.humidity;
-        document.getElementById("shanghai_min_temp").innerHTML =
-          response.min_temp;
-        document.getElementById("shanghai_max_temp").innerHTML =
-          response.max_temp;
-        document.getElementById("shanghai_sunrise").innerHTML =
-          formatTime(response.sunrise);
-        document.getElementById("shanghai_sunset").innerHTML = formatTime(response.sunset);
-        document.getElementById("shanghai_temp").innerHTML = response.temp;
-        document.getElementById("shanghai_wind_speed").innerHTML =
-          response.wind_speed;
-        document.getElementById("shanghai_wind_degrees").innerHTML =
-          response.wind_degrees;
+        const prefix = city.replace(/\s+/g, '_'); // Convert spaces to underscores for IDs
+        document.getElementById(`${prefix}_pct`).innerHTML = response.cloud_pct;
+        document.getElementById(`${prefix}_feels_like`).innerHTML = response.feels_like;
+        document.getElementById(`${prefix}_humidity`).innerHTML = response.humidity;
+        document.getElementById(`${prefix}_min_temp`).innerHTML = response.min_temp;
+        document.getElementById(`${prefix}_max_temp`).innerHTML = response.max_temp;
+        document.getElementById(`${prefix}_sunrise`).innerHTML = formatTime(response.sunrise);
+        document.getElementById(`${prefix}_sunset`).innerHTML = formatTime(response.sunset);
+        document.getElementById(`${prefix}_temp`).innerHTML = response.temp;
+        document.getElementById(`${prefix}_wind_speed`).innerHTML = response.wind_speed;
+        document.getElementById(`${prefix}_wind_degrees`).innerHTML = response.wind_degrees;
       });
   };
 
-  const populateBoston = () => {
-    fetch(
-      "https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=Boston",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        console.log(response);
-        document.getElementById("Boston_pct").innerHTML = response.cloud_pct;
-        document.getElementById("Boston_feels_like").innerHTML =
-          response.feels_like;
-        document.getElementById("Boston_humidity").innerHTML =
-          response.humidity;
-        document.getElementById("Boston_min_temp").innerHTML =
-          response.min_temp;
-        document.getElementById("Boston_max_temp").innerHTML =
-          response.max_temp;
-        document.getElementById("Boston_sunrise").innerHTML = formatTime(response.sunrise);
-        document.getElementById("Boston_sunset").innerHTML = formatTime(response.sunset);
-        document.getElementById("Boston_temp").innerHTML = response.temp;
-        document.getElementById("Boston_wind_speed").innerHTML =
-          response.wind_speed;
-        document.getElementById("Boston_wind_degrees").innerHTML =
-          response.wind_degrees;
-      });
-  };
-  const populateLondon = () => {
-    fetch(
-      "https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=London",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        console.log(response);
-        document.getElementById("London_pct").innerHTML = response.cloud_pct;
-        document.getElementById("London_feels_like").innerHTML =
-          response.feels_like;
-        document.getElementById("London_humidity").innerHTML =
-          response.humidity;
-        document.getElementById("London_min_temp").innerHTML =
-          response.min_temp;
-        document.getElementById("London_max_temp").innerHTML =
-          response.max_temp;
-        document.getElementById("London_sunrise").innerHTML = formatTime(response.sunrise);
-        document.getElementById("London_sunset").innerHTML = formatTime(response.sunset);
-        document.getElementById("London_temp").innerHTML = response.temp;
-        document.getElementById("London_wind_speed").innerHTML =
-          response.wind_speed;
-        document.getElementById("London_wind_degrees").innerHTML =
-          response.wind_degrees;
-      });
-  };
-  const populateNewYork = () => {
-    fetch(
-      "https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=New%20York",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        console.log(response);
-        document.getElementById("New_York_pct").innerHTML = response.cloud_pct;
-        document.getElementById("New_York_feels_like").innerHTML =
-          response.feels_like;
-        document.getElementById("New_York_humidity").innerHTML =
-          response.humidity;
-        document.getElementById("New_York_min_temp").innerHTML =
-          response.min_temp;
-        document.getElementById("New_York_max_temp").innerHTML =
-          response.max_temp;
-        document.getElementById("New_York_sunrise").innerHTML =
-         formatTime(response.sunrise);
-        document.getElementById("New_York_sunset").innerHTML = formatTime(response.sunset);
-        document.getElementById("New_York_temp").innerHTML = response.temp;
-        document.getElementById("New_York_wind_speed").innerHTML =
-          response.wind_speed;
-        document.getElementById("New_York_wind_degrees").innerHTML =
-          response.wind_degrees;
-      });
-  };
-  populateShanghai();
-  populateBoston();
-  populateLondon();
-  populateNewYork();
+  populateCity("Shanghai");
+  populateCity("Boston");
+  populateCity("London");
+  populateCity("New York");
+  
 });

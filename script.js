@@ -65,17 +65,27 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((response) => response.json())
       .then((response) => {
         console.log(response);
-        const prefix = city.replace(/\s+/g, '_'); // Convert spaces to underscores for IDs
+        const prefix = city.replace(/\s+/g, "_"); // Convert spaces to underscores for IDs
         document.getElementById(`${prefix}_pct`).innerHTML = response.cloud_pct;
-        document.getElementById(`${prefix}_feels_like`).innerHTML = response.feels_like;
-        document.getElementById(`${prefix}_humidity`).innerHTML = response.humidity;
-        document.getElementById(`${prefix}_min_temp`).innerHTML = response.min_temp;
-        document.getElementById(`${prefix}_max_temp`).innerHTML = response.max_temp;
-        document.getElementById(`${prefix}_sunrise`).innerHTML = formatTime(response.sunrise);
-        document.getElementById(`${prefix}_sunset`).innerHTML = formatTime(response.sunset);
+        document.getElementById(`${prefix}_feels_like`).innerHTML =
+          response.feels_like;
+        document.getElementById(`${prefix}_humidity`).innerHTML =
+          response.humidity;
+        document.getElementById(`${prefix}_min_temp`).innerHTML =
+          response.min_temp;
+        document.getElementById(`${prefix}_max_temp`).innerHTML =
+          response.max_temp;
+        document.getElementById(`${prefix}_sunrise`).innerHTML = formatTime(
+          response.sunrise
+        );
+        document.getElementById(`${prefix}_sunset`).innerHTML = formatTime(
+          response.sunset
+        );
         document.getElementById(`${prefix}_temp`).innerHTML = response.temp;
-        document.getElementById(`${prefix}_wind_speed`).innerHTML = response.wind_speed;
-        document.getElementById(`${prefix}_wind_degrees`).innerHTML = response.wind_degrees;
+        document.getElementById(`${prefix}_wind_speed`).innerHTML =
+          response.wind_speed;
+        document.getElementById(`${prefix}_wind_degrees`).innerHTML =
+          response.wind_degrees;
       });
   };
 
@@ -83,5 +93,4 @@ document.addEventListener("DOMContentLoaded", function () {
   populateCity("Boston");
   populateCity("London");
   populateCity("New York");
-  
 });

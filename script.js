@@ -8,6 +8,13 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   };
 
+  const formatTime = (timestamp) => {
+    const date = new Date(timestamp * 1000);
+    const hours = date.getHours().toString().padStart(2, "0");
+    const minutes = date.getMinutes().toString().padStart(2, "0");
+    return `${hours}:${minutes}`;
+  };
+
   const getWeather = (city) => {
     fetch(
       "https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=" + city,
@@ -26,8 +33,12 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("max_temp").innerHTML = response.max_temp;
         document.getElementById("wind_speed").innerHTML = response.wind_speed;
         document.getElementById("wind_speed2").innerHTML = response.wind_speed;
-        document.getElementById("sunrise").innerHTML = response.sunrise;
-        document.getElementById("sunset").innerHTML = response.sunset;
+        document.getElementById("sunrise").innerHTML = formatTime(
+          response.sunrise
+        );
+        document.getElementById("sunset").innerHTML = formatTime(
+          response.sunset
+        );
 
         document.querySelectorAll(".card").forEach(function (card) {
           card.classList.add("loaded");

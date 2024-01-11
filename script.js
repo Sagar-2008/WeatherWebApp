@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
     getWeather(cityInput);
   });
 
-  getWeather("Delhi");
+  getWeather("London");
 
   const populateCity = (city) => {
     fetch(

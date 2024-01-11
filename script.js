@@ -75,8 +75,8 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("shanghai_max_temp").innerHTML =
           response.max_temp;
         document.getElementById("shanghai_sunrise").innerHTML =
-          response.sunrise;
-        document.getElementById("shanghai_sunset").innerHTML = response.sunset;
+          formatTime(response.sunrise);
+        document.getElementById("shanghai_sunset").innerHTML = formatTime(response.sunset);
         document.getElementById("shanghai_temp").innerHTML = response.temp;
         document.getElementById("shanghai_wind_speed").innerHTML =
           response.wind_speed;
@@ -102,8 +102,8 @@ document.addEventListener("DOMContentLoaded", function () {
           response.min_temp;
         document.getElementById("Boston_max_temp").innerHTML =
           response.max_temp;
-        document.getElementById("Boston_sunrise").innerHTML = response.sunrise;
-        document.getElementById("Boston_sunset").innerHTML = response.sunset;
+        document.getElementById("Boston_sunrise").innerHTML = formatTime(response.sunrise);
+        document.getElementById("Boston_sunset").innerHTML = formatTime(response.sunset);
         document.getElementById("Boston_temp").innerHTML = response.temp;
         document.getElementById("Boston_wind_speed").innerHTML =
           response.wind_speed;
@@ -128,8 +128,8 @@ document.addEventListener("DOMContentLoaded", function () {
           response.min_temp;
         document.getElementById("London_max_temp").innerHTML =
           response.max_temp;
-        document.getElementById("London_sunrise").innerHTML = response.sunrise;
-        document.getElementById("London_sunset").innerHTML = response.sunset;
+        document.getElementById("London_sunrise").innerHTML = formatTime(response.sunrise);
+        document.getElementById("London_sunset").innerHTML = formatTime(response.sunset);
         document.getElementById("London_temp").innerHTML = response.temp;
         document.getElementById("London_wind_speed").innerHTML =
           response.wind_speed;
@@ -155,8 +155,8 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("New_York_max_temp").innerHTML =
           response.max_temp;
         document.getElementById("New_York_sunrise").innerHTML =
-          response.sunrise;
-        document.getElementById("New_York_sunset").innerHTML = response.sunset;
+         formatTime(response.sunrise);
+        document.getElementById("New_York_sunset").innerHTML = formatTime(response.sunset);
         document.getElementById("New_York_temp").innerHTML = response.temp;
         document.getElementById("New_York_wind_speed").innerHTML =
           response.wind_speed;

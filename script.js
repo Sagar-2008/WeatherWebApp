@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     method: "GET",
     headers: {
       "content-type": "application/octet-stream",
-      "X-RapidAPI-Key": "763c810bdfmshb9f4669b80c3925p18d818jsn3db5be365864",
+      "X-RapidAPI-Key": "2c9822633amsh8885e2943df8bcfp1a7677jsn2ce724667c69",
       "X-RapidAPI-Host": "weather-by-api-ninjas.p.rapidapi.com",
     },
   };
